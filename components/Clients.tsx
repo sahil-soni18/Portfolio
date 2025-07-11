@@ -1,14 +1,15 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
-import { companies, testimonials } from "@/data";
+import { skills, testimonials } from "@/data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 
 const Clients = () => {
   return (
     <section id="testimonials" className="py-20">
-      <h1 className="heading">
+      <h1 className="heading text-purple">
         Kind words from
         <span className="text-[#0ea5e9]"> Satisfied Clients</span>
       </h1>
@@ -26,25 +27,26 @@ const Clients = () => {
         </div>
         <h1 className="heading">
           My <span className="text-[#0ea5e9]">Skills</span>
-        </h1>{" "}
+        </h1>
         &nbsp;
         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
-          {companies.map((company) => (
-            <React.Fragment key={company.id}>
-              <div className="flex md:max-w-60 max-w-32 gap-2">
-                <img
-                  src={company.img}
-                  alt={company.name}
-                  className="md:w-10 w-5"
-                />
-                {/* <img
-                   src={company.nameImg}
-                   alt={company.name}
-                  width={company.id === 4 || company.id === 5 ? 100 : 150}
-                  className="md:w-24 w-20"
-                /> */}
-              </div>
-            </React.Fragment>
+          {skills.map((skill) => (
+            <a
+              key={skill.id}
+              href={skill.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={skill.name}
+              className="transition-transform hover:scale-110"
+            >
+              <Image
+                src={skill.img}
+                alt={skill.name}
+                width={40}
+                height={40}
+                className="md:w-10 w-6"
+              />
+            </a>
           ))}
         </div>
       </div>

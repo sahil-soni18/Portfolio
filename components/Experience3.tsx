@@ -46,94 +46,107 @@
 //   },
 // ];
 // export default Experience3;
-
-
 import React from "react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 const Experience3 = () => {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-20">
+    <div className="max-w-5xl mx-auto px-8 py-20" id="experience">
       <h1 className="heading">
-        My <span className="text-[#0ea5e9]">Work Experience</span>
+        <span className="text-[#0ea5e9]">My Work Experience</span>
       </h1>
       <HoverEffect items={workExperience} />
     </div>
   );
 };
 
-// Assuming workExperience is defined and exported from a data file
 export const workExperience = [
   {
     id: 1,
-    title: "MERN Stack Developer Intern",
+    title: "Full Stack Developer – NPrep Edtech",
     description: (
-      //   "Assisted in the development of a website for GoodTechMind.\nSee Company",
       <>
-        Assisted in the development of a website for GoodTechMind.
+        Engineered scalable web apps using NestJS, React.js & TypeScript,
+        serving 20,000+ monthly users.
         <br />
-        <samp className="text-cyan-400">Link</samp>
+        Improved UI responsiveness with MUI and contributed to CI/CD pipelines.
+        <br />
+        <samp className="text-cyan-400">Live Product</samp>
       </>
     ),
-    // thumbnail: "path/to/thumbnail1.jpg",
-    link: "https://www.linkedin.com/company/goodtechmind/mycompany/",
+    link: "https://nprep.in", // Assuming public site
   },
   {
     id: 2,
-    title: "Web Developer Intern",
+    title: "Software Engineer Intern – Ciena India",
     description: (
       <>
-        Designed and developed a website for both Desktop & Mobile platforms for
-        Goameonglow.
+        Built high-performance APIs with FastAPI; enhanced dashboard response by
+        25%.
         <br />
-        <samp className="text-cyan-400">Link</samp>
+        Boosted test coverage from 60% to 95% and fixed 10+ real-time production
+        issues.
+        <br />
+        <samp className="text-cyan-400">Company</samp>
       </>
     ),
-    // thumbnail: "path/to/thumbnail2.jpg",
-    link: "https://www.gameonglow.com/",
+    link: "https://www.ciena.com",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
+    title: "Full Stack Developer Intern – Good Tech Mind",
     description: (
       <>
-        Led the development of a mobile app for a client, from initial concept
-        to deployment on app stores.
+        Developed full-stack app using MERN stack; integrated third-party APIs
+        and Docker.
         <br />
-        <samp className="text-cyan-400">Link</samp>
+        Enabled secure login for 500+ daily users with JWT auth.
+        <br />
+        <samp className="text-cyan-400">LinkedIn</samp>
       </>
     ),
-
-    // thumbnail: "path/to/thumbnail3.jpg",
-    link: "",
+    link: "https://www.linkedin.com/company/goodtechmind/mycompany/",
   },
   {
     id: 4,
-    title: "Full Stack Developer",
+    title: "Capstone Project – FarmBridge App",
     description: (
       <>
-        Developed and maintained user-facing features using modern web
-        technologies for Dotsquare company.
+        Built farmer-to-consumer marketplace using React Native, Node.js &
+        PostgreSQL.
         <br />
-        <samp className="text-cyan-400">Link</samp>
+        Implemented auth, cart, order management & REST APIs.
+        <br />
+        <samp className="text-cyan-400">GitHub</samp>
       </>
     ),
-
-    // thumbnail: "path/to/thumbnail4.jpg",
-    link: "https://www.dotsquares.com/",
+    link: "https://github.com/sahil-soni18/Farm-Bridge-App",
   },
   {
     id: 5,
-    title: "Hackathon Experince",
+    title: "Backend Developer – E-Commerce System",
     description: (
       <>
-        Reach Final Round in various Hackathon and made real problems projects.
+        Designed product & payment backend using FastAPI and PostgreSQL.
         <br />
-        <samp className="text-cyan-400">Link</samp>
+        Optimized DB with indexes; reduced query latency by 40%.
+        <br />
+        <samp className="text-cyan-400">GitHub</samp>
       </>
     ),
-
-    // thumbnail: "path/to/thumbnail4.jpg",
+    link: "https://github.com/sahil-soni18/StepWiseMart",
+  },
+  {
+    id: 6,
+    title: "Hackathon Experience – MUJHackX 2.0",
+    description: (
+      <>
+        Reached Round 2 in MUJHackX 2.0 among 500+ teams with real-world project
+        solution.
+        <br />
+        <samp className="text-cyan-400">Certificate</samp>
+      </>
+    ),
     link: "https://unstop.com/certificate-preview/c2ee61f3-cbc8-4c1a-a6f1-fa2c79692f55?utm_campaign=site-emails",
   },
 ];

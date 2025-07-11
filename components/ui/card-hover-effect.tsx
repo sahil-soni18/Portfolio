@@ -112,8 +112,9 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const HoverEffect = ({
   items,
@@ -121,7 +122,7 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
-    description: string;
+    description: React.ReactNode;
     link: string;
     thumbnail?: string;
   }[];
@@ -163,7 +164,7 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             {item.thumbnail && (
-              <img
+              <Image
                 src={item.thumbnail}
                 alt={item.title}
                 className="rounded-t-2xl w-full h-32 object-cover"

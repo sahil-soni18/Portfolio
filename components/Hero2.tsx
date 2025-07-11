@@ -3,8 +3,14 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { Typewriter } from "react-simple-typewriter";
 
-const Hero2=() => {
+const Hero2 = () => {
+  const handleScroll = () => {
+    const section = document.getElementById("experience");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <AuroraBackground>
       <motion.div
@@ -15,20 +21,43 @@ const Hero2=() => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 items-center justify-center px-4"
+        className="relative flex flex-col gap-6 items-center justify-center px-4 text-center"
       >
-        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
-          Having experience is cool, you know.
-        </div>
-        {/* <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          by - Sourabh Singh Bais
-        </div> */}
-        {/* <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
-          Debug now
-        </button> */}
+        <h1 className="text-3xl md:text-6xl font-bold dark:text-white">
+          I’m a&nbsp;
+          <span className="text-[#0ea5e9]">
+            <Typewriter
+              words={[
+                "Full Stack Developer.",
+                "Problem Solver.",
+                "Tech Explorer.",
+                "API Crafter.",
+                "React Enthusiast.",
+              ]}
+              loop={true}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </span>
+        </h1>
+        <p className="max-w-xl text-base md:text-2xl text-neutral-600 dark:text-neutral-300">
+          Turning ideas into full-stack web & mobile apps using{" "}
+          <span className="text-[#0ea5e9] font-semibold">React</span>,{" "}
+          <span className="text-[#0ea5e9] font-semibold">Node.js</span>, and{" "}
+          <span className="text-[#0ea5e9] font-semibold">FastAPI</span>.
+        </p>
+        <button
+          onClick={handleScroll}
+          className="bg-[#0ea5e9] hover:bg-[#0284c7] transition-colors text-white px-6 py-2 rounded-full font-medium shadow-lg"
+        >
+          🚀 Explore My Work
+        </button>
       </motion.div>
     </AuroraBackground>
   );
 };
-export default Hero2;
 
+export default Hero2;

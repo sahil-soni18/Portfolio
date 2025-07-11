@@ -11,50 +11,38 @@ export const TextGenerateEffect = ({
   className?: string;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
-  useEffect(() => {
-    console.log(wordsArray);
-    animate(
-      "span",
-      {
-        opacity: 1,
-      },
-      {
-        duration: 2,
-        delay: stagger(0.2),
-      }
-    );
-  }, [scope.current]);
+  // Split by newlines first, then by spaces
+  const lines = words.split("\n");
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope}>
-        {wordsArray.map((word, idx) => {
-          return (
-            <motion.span
-              key={word + idx}
-              // change here if idx is greater than 3, change the text color to #CBACF9
-              className={` ${
-                idx > 3 ? "text-[#84cc16]" : "dark:text-white text-black"
-              } opacity-0`}
-            >
-              {word}{" "}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-    );
-  };
+  useEffect(() => {
+    animate("span", { opacity: 1 }, { duration: 2, delay: stagger(0.2) });
+  }, [scope]);
+
+  const renderWords = () => (
+    <motion.div ref={scope}>
+      {lines.map((line, lineIndex) => (
+        <div key={lineIndex}>
+          {line.split(/(\s+)/).map((word, wordIndex) =>
+            word.trim() === "" ? (
+              " " // preserve spaces
+            ) : (
+              <motion.span
+                key={`${lineIndex}-${wordIndex}`}
+                className="opacity-0 inline-block"
+              >
+                {word}&nbsp;
+              </motion.span>
+            )
+          )}
+          {lineIndex < lines.length - 1 && <br />}
+        </div>
+      ))}
+    </motion.div>
+  );
 
   return (
     <div className={cn("font-bold", className)}>
-      {/* mt-4 to my-4 */}
-      <div className="my-4">
-        {/* remove  text-2xl from the original */}
-        <div className=" dark:text-white text-black leading-snug tracking-wide">
-          {renderWords()}
-        </div>
-      </div>
+      <div className="my-4 leading-snug tracking-wide">{renderWords()}</div>
     </div>
   );
 };
