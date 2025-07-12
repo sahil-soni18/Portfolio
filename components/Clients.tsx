@@ -10,8 +10,8 @@ const Clients = () => {
   return (
     <section id="testimonials" className="py-20">
       <h1 className="heading text-purple">
-        Kind words from
-        <span className="text-[#0ea5e9]"> Satisfied Clients</span>
+        Appreciation from
+        <span className="text-[#0ea5e9]"> My Colleagues and Mentors</span>
       </h1>
 
       <div className="flex flex-col items-center max-lg:mt-10">
