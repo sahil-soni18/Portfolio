@@ -1,5 +1,5 @@
 import React from "react";
-import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { HoverEffect } from "./ui/card-hover-effect";
 import { Box, Typography, Link } from "@mui/material";
 
 const Experience3 = () => {
@@ -7,7 +7,7 @@ const Experience3 = () => {
     <Box
       id="experience"
       sx={{
-        maxWidth: "1040px", 
+        maxWidth: "1040px",
         mx: "auto",
         px: 4,
         py: 10,

@@ -2,9 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLocationArrow } from "react-icons/fa6";
-import { socialMedia } from "@/data";
+import { socialMedia } from "../data";
 import MagicButton from "./MagicButton";
-import { LampContainer } from "@/components/ui/lamp";
+import { LampContainer } from "../components/ui/lamp";
 import Image from "next/image";
 import { Box, Typography, Link, Container, Stack } from "@mui/material";
 

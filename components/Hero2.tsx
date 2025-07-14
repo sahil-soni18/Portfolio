@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+import { AuroraBackground } from "../components/ui/aurora-background";
 import { Typewriter } from "react-simple-typewriter";
 import { Box, Typography, Button } from "@mui/material";
 

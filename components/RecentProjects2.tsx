@@ -11,7 +11,7 @@ import {
   Chip,
   Theme,
 } from "@mui/material";
-import { projects } from "@/data";
+import { projects } from "../data";
 import { FaLocationArrow } from "react-icons/fa6";
 import { motion } from "framer-motion";
 

@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { Box, Typography, Link } from "@mui/material";
-import { skills, testimonials } from "@/data";
+import { skills, testimonials } from "../data";
 import { InfiniteMovingCards } from "./ui/InfiniteCards";
 
 const Clients = () => {
