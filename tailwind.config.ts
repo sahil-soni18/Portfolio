@@ -24,6 +24,9 @@ const config = {
       },
     },
     extend: {
+      borderColor: {
+        DEFAULT: "hsl(var(--border))",
+      },
       scrollBehavior: ["smooth"],
       colors: {
         black: {
@@ -181,7 +184,6 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(
         {
