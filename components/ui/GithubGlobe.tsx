@@ -32,7 +32,7 @@ export default function GitHubGlobe() {
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         backgroundColor="rgba(0, 0, 0, 0)"
         atmosphereColor="rgba(63, 201, 255, 0.6)"
-        animateIn={false}
+        animateIn={true}
         rendererConfig={{ antialias: true }}
       />
     </div>

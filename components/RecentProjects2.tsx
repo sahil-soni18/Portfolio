@@ -1,80 +1,140 @@
 "use client";
-
 import Image from "next/image";
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/card";
-import Link from "next/link";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Link,
+  Stack,
+  Chip,
+  Theme,
+} from "@mui/material";
 import { projects } from "@/data";
 import { FaLocationArrow } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const RecentProjects2 = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 mt-6">
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "1fr",
+          md: "repeat(2, 1fr)",
+          lg: "repeat(3, 1fr)",
+        },
+        gap: 3,
+        p: 2,
+        mt: 4,
+      }}
+    >
       {projects.map((item) => (
-        <CardContainer className="inter-var" key={item.id}>
-          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 border">
-            <CardItem
-              translateZ="50"
-              className="text-xl font-bold text-neutral-600 dark:text-white"
-            >
-              {item.title}
-            </CardItem>
-            <CardItem
-              as="p"
-              translateZ="60"
-              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-            >
-              {item.des}
-            </CardItem>
-            <CardItem translateZ="100" className="w-full mt-4">
-              <Image
-                src={item.img}
-                height={200}
-                width={400}
-                className="w-full h-32 object-contain rounded-xl group-hover/card:shadow-xl"
-                alt={item.title}
-              />
-            </CardItem>
-            {item.title === "NPrep Official Website" && (
-              <p className="text-[10px] text-neutral-400 mt-2">
-                Disclaimer: Logo and brand used for attribution only. All rights
-                belong to NPrep Edtech.
-              </p>
-            )}
-            <div className="flex items-center justify-between mt-6">
-              <CardItem
-                translateZ={20}
-                as={Link}
-                href={item.link}
-                target="_blank"
-                className="px-3 py-1 rounded-xl text-xs font-normal dark:text-[#0ea5e9]"
+        <motion.div
+          key={item.id}
+          whileHover={{ y: -5 }}
+          transition={{ duration: 0.2 }}
+        >
+          <Card
+            sx={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              bgcolor: "background.paper",
+              border: "1px solid",
+              borderColor: "divider",
+              borderRadius: 2,
+              p: 2,
+              "&:hover": {
+                boxShadow: (theme: Theme) =>
+                  `0 0 20px ${theme.palette.primary.light}`,
+              },
+            }}
+          >
+            <CardContent>
+              <Typography variant="h5" component="h3" gutterBottom>
+                {item.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" mb={2}>
+                {item.des}
+              </Typography>
+
+              <Box
+                sx={{
+                  width: "100%",
+                  height: 120,
+                  position: "relative",
+                  mb: 2,
+                  borderRadius: 1,
+                  overflow: "hidden",
+                }}
               >
-                Check Live Site →
-                <div className="flex items-center mt-2">
+                <Image
+                  src={item.img}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  alt={item.title}
+                />
+              </Box>
+
+              {item.title === "NPrep Official Website" && (
+                <Typography variant="caption" color="text.disabled">
+                  Disclaimer: Logo and brand used for attribution only. All
+                  rights belong to NPrep Edtech.
+                </Typography>
+              )}
+
+              <Stack
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                mt={3}
+              >
+                <Link
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="none"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    color: "primary.main",
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                  }}
+                >
+                  Check Live Site <FaLocationArrow style={{ marginLeft: 4 }} />
+                </Link>
+
+                <Stack direction="row" spacing={-1}>
                   {item.iconLists.map((icon, index) => (
-                    <div
+                    <Box
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black w-8 h-8 lg:w-10 lg:h-10 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
+                      sx={{
+                        border: "1px solid",
+                        borderColor: "divider",
+                        borderRadius: "50%",
+                        bgcolor: "background.default",
+                        width: 32,
+                        height: 32,
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        transform: `translateX(-${index * 8}px)`,
+                        zIndex: item.iconLists.length - index,
                       }}
                     >
-                      <Image
-                        src={icon}
-                        alt="icon"
-                        width={24}
-                        height={24}
-                        className="p-1"
-                      />
-                    </div>
+                      <Image src={icon} alt="icon" width={20} height={20} />
+                    </Box>
                   ))}
-                </div>
-              </CardItem>
-            </div>
-          </CardBody>
-        </CardContainer>
+                </Stack>
+              </Stack>
+            </CardContent>
+          </Card>
+        </motion.div>
       ))}
-    </div>
+    </Box>
   );
 };
 

@@ -1,19 +1,37 @@
 "use client";
 
-import { FaLocationArrow } from "react-icons/fa6";
-import { projects } from "@/data";
-import { PinContainer } from "./ui/Pin";
+import { Box, Stack, Typography } from "@mui/material";
 
 const RecentProjects = () => {
   return (
-    <section id="Projects">
-      <div className="py-20">
-        <h1 className="heading text-purple">
-          A small selection of{" "}
-          <span className="text-[#0ea5e9]">Recent Projects</span>
-        </h1>
-      </div>
-    </section>
+    <Stack id="Projects" spacing={4} sx={{ py: 10 }}>
+      <Box>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 700,
+            color: "#9333ea", // Tailwind's purple-600
+            mb: 1,
+          }}
+        >
+          Handpicked Highlights
+        </Typography>
+
+        <Typography
+          variant="h2"
+          sx={{
+            fontWeight: 800,
+            fontSize: { xs: "2rem", md: "3.5rem" },
+            color: "#0ea5e9", // Tailwind's sky-500
+            lineHeight: 1.2,
+          }}
+        >
+          A Curated Collection of My Recent Work
+        </Typography>
+      </Box>
+
+      {/* Project List Goes Here */}
+    </Stack>
   );
 };
 

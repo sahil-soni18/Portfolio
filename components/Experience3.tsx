@@ -1,62 +1,35 @@
-// import { HoverEffect } from "@/components/ui/card-hover-effect";
-
-// const Experience3=()=> {
-//   return (
-//     <div className="max-w-5xl mx-auto px-8">
-//       <HoverEffect items={projects} />
-//     </div>
-//   );
-// }
-// export const projects = [
-//   {
-//     title: "Stripe",
-//     description:
-//       "A technology company that builds economic infrastructure for the internet.",
-//     link: "https://stripe.com",
-//   },
-//   {
-//     title: "Netflix",
-//     description:
-//       "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-//     link: "https://netflix.com",
-//   },
-//   {
-//     title: "Google",
-//     description:
-//       "A multinational technology company that specializes in Internet-related services and products.",
-//     link: "https://google.com",
-//   },
-//   {
-//     title: "Meta",
-//     description:
-//       "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-//     link: "https://meta.com",
-//   },
-//   {
-//     title: "Amazon",
-//     description:
-//       "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-//     link: "https://amazon.com",
-//   },
-//   {
-//     title: "Microsoft",
-//     description:
-//       "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-//     link: "https://microsoft.com",
-//   },
-// ];
-// export default Experience3;
 import React from "react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { Box, Typography, Link } from "@mui/material";
 
 const Experience3 = () => {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-20" id="experience">
-      <h1 className="heading">
-        <span className="text-[#0ea5e9]">My Work Experience</span>
-      </h1>
+    <Box
+      id="experience"
+      sx={{
+        maxWidth: "1040px", 
+        mx: "auto",
+        px: 4,
+        py: 10,
+      }}
+    >
+      <Typography
+        variant="h2"
+        component="h1"
+        sx={{
+          fontSize: "2.25rem",
+          fontWeight: "bold",
+          mb: 4,
+          textAlign: "center",
+          "& span": {
+            color: "primary.main", // using theme's primary color
+          },
+        }}
+      >
+        My <span>Work Experience</span>
+      </Typography>
       <HoverEffect items={workExperience} />
-    </div>
+    </Box>
   );
 };
 
@@ -71,10 +44,18 @@ export const workExperience = [
         <br />
         Improved UI responsiveness with MUI and contributed to CI/CD pipelines.
         <br />
-        <samp className="text-cyan-400">Live Product</samp>
+        <Link
+          href="https://nprep.in"
+          color="primary.light"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ display: "inline-block", mt: 1 }}
+        >
+          Live Product
+        </Link>
       </>
     ),
-    link: "https://nprep.in", // Assuming public site
+    link: "https://nprep.in",
   },
   {
     id: 2,
@@ -87,7 +68,15 @@ export const workExperience = [
         Boosted test coverage from 60% to 95% and fixed 10+ real-time production
         issues.
         <br />
-        <samp className="text-cyan-400">Company</samp>
+        <Link
+          href="https://www.ciena.com"
+          color="primary.light"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ display: "inline-block", mt: 1 }}
+        >
+          Company
+        </Link>
       </>
     ),
     link: "https://www.ciena.com",
@@ -102,7 +91,15 @@ export const workExperience = [
         <br />
         Enabled secure login for 500+ daily users with JWT auth.
         <br />
-        <samp className="text-cyan-400">LinkedIn</samp>
+        <Link
+          href="https://www.linkedin.com/company/goodtechmind/mycompany/"
+          color="primary.light"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ display: "inline-block", mt: 1 }}
+        >
+          LinkedIn
+        </Link>
       </>
     ),
     link: "https://www.linkedin.com/company/goodtechmind/mycompany/",
@@ -117,7 +114,15 @@ export const workExperience = [
         <br />
         Implemented auth, cart, order management & REST APIs.
         <br />
-        <samp className="text-cyan-400">GitHub</samp>
+        <Link
+          href="https://github.com/sahil-soni18/Farm-Bridge-App"
+          color="primary.light"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ display: "inline-block", mt: 1 }}
+        >
+          GitHub
+        </Link>
       </>
     ),
     link: "https://github.com/sahil-soni18/Farm-Bridge-App",
@@ -131,7 +136,15 @@ export const workExperience = [
         <br />
         Optimized DB with indexes; reduced query latency by 40%.
         <br />
-        <samp className="text-cyan-400">GitHub</samp>
+        <Link
+          href="https://github.com/sahil-soni18/StepWiseMart"
+          color="primary.light"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ display: "inline-block", mt: 1 }}
+        >
+          GitHub
+        </Link>
       </>
     ),
     link: "https://github.com/sahil-soni18/StepWiseMart",
@@ -144,7 +157,15 @@ export const workExperience = [
         Reached Round 2 in MUJHackX 2.0 among 500+ teams with real-world project
         solution.
         <br />
-        <samp className="text-cyan-400">Certificate</samp>
+        <Link
+          href="https://unstop.com/certificate-preview/c2ee61f3-cbc8-4c1a-a6f1-fa2c79692f55?utm_campaign=site-emails"
+          color="primary.light"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ display: "inline-block", mt: 1 }}
+        >
+          Certificate
+        </Link>
       </>
     ),
     link: "https://unstop.com/certificate-preview/c2ee61f3-cbc8-4c1a-a6f1-fa2c79692f55?utm_campaign=site-emails",
