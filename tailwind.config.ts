@@ -7,15 +7,11 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-
-
 const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
     "./data/**/*.{ts,tsx}",
   ],
   prefix: "",
@@ -28,7 +24,7 @@ const config = {
       },
     },
     extend: {
-      scrollBehavior: ['smooth'],
+      scrollBehavior: ["smooth"],
       colors: {
         black: {
           DEFAULT: "#000",
